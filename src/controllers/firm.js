@@ -72,11 +72,7 @@ module.exports = {
         in:'body',
         required:true,
         schema:{
-        "Firmname" : "test"
-        "password" : "Test01?"
-        "email" : "test@site.com"
-        "firstName" : "test"
-        "lastName" : "test"
+        
         }
     }
     
