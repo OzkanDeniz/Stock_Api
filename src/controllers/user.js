@@ -69,6 +69,22 @@ module.exports = {
   },
 
   update: async (req, res) => {
+    /* 
+    #swagger.tags = ["Users"]
+    #swagger.summary = "Update User"
+    #swagger.parameters['body'] = {
+        in:'body',
+        required:true,
+        schema:{
+        "username" : "test"
+        "password" : "Test01?"
+        "email" : "test@site.com"
+        "firstName" : "test"
+        "lastName" : "test"
+        }
+    }
+    
+    */
     const data = await User.updateOne({ _id: req.params.id }, req.body, {
       runValidators: true,
     });
@@ -81,6 +97,10 @@ module.exports = {
   },
 
   deletee: async (req, res) => {
+    /* 
+    #swagger.tags = ["Users"]
+    #swagger.summary = "Delete Single User"
+    */
     const data = await User.deleteOne({ _id: req.params.id });
 
     res.status(data.deletedCount ? 204 : 404).send({
