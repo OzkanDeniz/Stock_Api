@@ -8,7 +8,7 @@ module.exports = async function () {
 
     // return null;
 
-    /* REMOVE DATABASE *
+    /* REMOVE DATABASE */
     const { mongoose } = require('../configs/dbConnection')
     await mongoose.connection.dropDatabase()
     console.log('- Database and all data DELETED!')
@@ -51,7 +51,7 @@ module.exports = async function () {
         "isAdmin": false
     })
 
-    /* Brand *
+    /* Brand */
     const Brand = require('../models/brand')
     await Brand.deleteMany() // !!! Clear collection.
     await Brand.create({
@@ -110,7 +110,7 @@ module.exports = async function () {
         "image": "https://www.tailorbrands.com/wp-content/uploads/2021/01/apple_logo_1988.jpg"
     })
 
-    /* Category *
+    /* Category */
     const Category = require('../models/category')
     await Category.deleteMany() // !!! Clear collection.
     await Category.create({
@@ -130,7 +130,7 @@ module.exports = async function () {
         "name": "Electronic",
     })
 
-    /* Firm *
+    /* Firm */
     const Firm = require('../models/firm')
     await Firm.deleteMany() // !!! Clear collection.
     await Firm.create({
@@ -197,7 +197,7 @@ module.exports = async function () {
         "address": "B01-Z02 Maslak Büyükdere Cad. Uso Center 245/A, 34396 Sarıyer/İstanbul, Türkiye"
     })
 
-    /* Product *
+    /* Product */
     const Product = require('../models/product')
     await Product.deleteMany() // !!! Clear collection.
     await Product.create({
@@ -205,38 +205,38 @@ module.exports = async function () {
         "name": "Tommy",
         "categoryId": "65343222b67e9681f937f203",
         "brandId": "65343222b67e9681f937f107",
-        "stock": 0
+        "quantity": 0
     })
     await Product.create({
         "_id": "65343222b67e9681f937f422",
         "name": "Link",
         "categoryId": "65343222b67e9681f937f202",
         "brandId": "65343222b67e9681f937f123",
-        "stock": 910
+        "quantity": 910
     })
     await Product.create({
         "_id": "65343222b67e9681f937f423",
         "name": "Cola Turka",
         "categoryId": "65343222b67e9681f937f202",
         "brandId": "65343222b67e9681f937f123",
-        "stock": 750
+        "quantity": 750
     })
     await Product.create({
         "_id": "65343222b67e9681f937f426",
         "name": "Rondo",
         "categoryId": "65343222b67e9681f937f201",
         "brandId": "65343222b67e9681f937f123",
-        "stock": 900
+        "quantity": 900
     })
     await Product.create({
         "_id": "65343222b67e9681f937f427",
         "name": "Iphone 14 Pro",
         "categoryId": "65343222b67e9681f937f204",
         "brandId": "65343222b67e9681f937f131",
-        "stock": 0
+        "quantity": 0
     })
 
-    /* Purchase *
+    /* Purchase */
     const Purchase = require('../models/purchase')
     await Purchase.deleteMany() // !!! Clear collection.
     await Purchase.create({
@@ -285,7 +285,7 @@ module.exports = async function () {
         "price": 2500
     })
 
-    /* Sale *
+    /* Sale */
     const Sale = require('../models/sale')
     await Sale.deleteMany() // !!! Clear collection.
     await Sale.create({
