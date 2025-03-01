@@ -49,7 +49,7 @@ module.exports = {
     
     const data = await User.create(req.body);
 
-    res.status(200).send({
+    res.status(201).send({
       error: false,
       data,
     });
@@ -57,7 +57,7 @@ module.exports = {
 
   read: async (req, res) => {
 
-    const data = await User.findOne({id:req.params.id});
+    const data = await User.findOne({_id:req.params.id});
 
     res.status(200).send({
       error: false,
