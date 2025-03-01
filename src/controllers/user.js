@@ -29,7 +29,25 @@ module.exports = {
 
   //! CRUD:
   create: async (req, res) => {
-    const data = await User.find();
+
+    /* 
+    #swagger.tags = ["Users"]
+    #swagger.summary = "Create User"
+    #swagger.parameters['body'] = {
+        in:'body',
+        required:true,
+        schema:{
+        "username" : "test"
+        "password" : "Test01?"
+        "email" : "test@site.com"
+        "firstName" : "test"
+        "lastName" : "test"
+        }
+    }
+     */
+
+    
+    const data = await User.create(req.body);
 
     res.status(200).send({
       error: false,
@@ -38,7 +56,8 @@ module.exports = {
   },
 
   read: async (req, res) => {
-    const data = await User.find();
+
+    const data = await User.findOne({id:req.params.id});
 
     res.status(200).send({
       error: false,
