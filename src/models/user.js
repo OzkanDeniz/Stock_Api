@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema(
       unique: true,
       trim: true,
       required:true,
+      index:true,
       validate: [
         (email) => email.includes("@") && email.includes("."),
         "Email is not valid",

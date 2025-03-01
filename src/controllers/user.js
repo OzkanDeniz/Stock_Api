@@ -18,7 +18,7 @@ module.exports = {
                 </ul>
     
      */
-    const data = await res.getModelList(User)
+    const data = await res.getModelList(User);
 
     res.status(200).send({
       error: false,
@@ -29,7 +29,6 @@ module.exports = {
 
   //! CRUD:
   create: async (req, res) => {
-
     /* 
     #swagger.tags = ["Users"]
     #swagger.summary = "Create User"
@@ -46,7 +45,6 @@ module.exports = {
     }
      */
 
-    
     const data = await User.create(req.body);
 
     res.status(201).send({
@@ -56,14 +54,13 @@ module.exports = {
   },
 
   read: async (req, res) => {
-
     /* 
     #swagger.tags = ["Users"]
     #swagger.summary = "Get Single User"
     
     */
 
-    const data = await User.findOne({_id:req.params.id});
+    const data = await User.findOne({ _id: req.params.id });
 
     res.status(200).send({
       error: false,
@@ -72,23 +69,23 @@ module.exports = {
   },
 
   update: async (req, res) => {
-
-    const data = await User.updateOne({_id:req.params.id},req.body,{runValidators:true});
+    const data = await User.updateOne({ _id: req.params.id }, req.body, {
+      runValidators: true,
+    });
 
     res.status(200).send({
       error: false,
       data,
-      new : await User.findOne({_id:req.params.id})
+      new: await User.findOne({ _id: req.params.id }),
     });
   },
 
   deletee: async (req, res) => {
-
-    const data = await User.deleteOne({_id:req.params.id});
+    const data = await User.deleteOne({ _id: req.params.id });
 
     res.status(data.deletedCount ? 204 : 404).send({
       error: true,
-      message: 'Something went wrong, data might be deleted already.' ,
+      message: "Something went wrong, data might be deleted already.",
     });
   },
 };
