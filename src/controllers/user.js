@@ -82,7 +82,7 @@ module.exports = {
     });
   },
 
-  delete: async (req, res) => {
+  deletee: async (req, res) => {
 
     const data = await User.deleteOne({_id:req.params.id});
 
