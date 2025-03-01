@@ -7,7 +7,7 @@ const router = require('express').Router()
 
 const {list,create, read, update, deletee} = require("../controllers/token")
 
-// URL: /users 
+// URL: /tokens 
 
 router.route("/").get(list).post(create)
 
