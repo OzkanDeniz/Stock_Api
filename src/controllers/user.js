@@ -83,11 +83,12 @@ module.exports = {
   },
 
   delete: async (req, res) => {
-    const data = await User.find();
 
-    res.status(200).send({
-      error: false,
-      data,
+    const data = await User.deleteOne({_id:req.params.id});
+
+    res.status(data.deletedCount ? 204 : 404).send({
+      error: true,
+      message: 'Something went wrong, data might be deleted already.' ,
     });
   },
 };
