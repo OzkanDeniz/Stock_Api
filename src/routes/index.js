@@ -21,7 +21,7 @@ router.use('/tokens', require('./token'))
 // // category:
 // router.use('/categories', require('./category'))
 // // firm:
-// router.use('/firms', require('./firm'))
+router.use('/firms', require('./firm'))
 // // product:
 // router.use('/products', require('./product'))
 // // purchase:
