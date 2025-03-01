@@ -57,6 +57,12 @@ module.exports = {
 
   read: async (req, res) => {
 
+    /* 
+    #swagger.tags = ["Users"]
+    #swagger.summary = "Get Single User"
+    
+    */
+
     const data = await User.findOne({_id:req.params.id});
 
     res.status(200).send({
@@ -66,11 +72,13 @@ module.exports = {
   },
 
   update: async (req, res) => {
-    const data = await User.find();
+
+    const data = await User.updateOne({_id:req.params.id},req.body,{runValidators:true});
 
     res.status(200).send({
       error: false,
       data,
+      new : await User.findOne({_id:req.params.id})
     });
   },
 
