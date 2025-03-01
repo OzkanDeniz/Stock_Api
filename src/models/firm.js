@@ -3,7 +3,7 @@
     | FULLSTACK TEAM | NODEJS / EXPRESS |
 ------------------------------------------------------- */
 const { mongoose } = require("../configs/dbConnection");
-const passwordEncrypt = require("../helpers/passwordEncrypt");
+
 /* ------------------------------------------------------- */
 
 const FirmSchema = new mongoose.Schema(
