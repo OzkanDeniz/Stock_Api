@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       unique: true,
       trim: true,
-      index: true,
+      index: true, //!When we want to keep it in RAM, the index attribute is given.
       required: true,
     },
     password: {
